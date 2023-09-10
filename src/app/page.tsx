@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { UserButton, auth } from "@clerk/nextjs";
 import Link from "next/link";
 import {LogIn} from "lucide-react"
+import FileUpload from "@/components/FileUpload";
 
 export default async function Home() {
   const {userId} =await auth()
@@ -21,7 +22,7 @@ export default async function Home() {
             join million of students and professor and understand the real power of openai
            </p>
            <div className="w-full mt-4">
-               {isAuth ?(<h1>fileupload</h1>):(
+               {isAuth ?(<FileUpload/>):(
                 <Link href="/sign-in">
                 <Button>login to get started
                    <LogIn className="w-4 h-4 ml-2"/>
